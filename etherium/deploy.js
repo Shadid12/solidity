@@ -3,7 +3,7 @@ const Web3 = require('web3');
 const compiledFactory = require('./build/CampaignFactory.json');
 
 const provider = new HDWalletProvider(
-    'shine protect input car steel same man sound robot hollow purchase essay',
+    'filter such behave relief reunion exchange camera funny public copy travel kangaroo',
     'https://rinkeby.infura.io/HvhZxy6HUHEmMLSiHt6M'
 );
 
