@@ -3,8 +3,8 @@ const Web3 = require('web3');
 const compiledFactory = require('./build/CampaignFactory.json');
 
 const provider = new HDWalletProvider(
-    'glad design bleak banana leg lawsuit spin intact surge practice unable trend',
-    'https://rinkeby.infura.io/CoTkgVuwHw2TxB7h827v'
+    'shine protect input car steel same man sound robot hollow purchase essay',
+    'https://rinkeby.infura.io/HvhZxy6HUHEmMLSiHt6M'
 );
 
 const web3 = new Web3(provider);
@@ -18,7 +18,7 @@ const deploy = async () => {
       JSON.parse(compiledFactory.interface)
     )
       .deploy({ data: compiledFactory.bytecode })
-      .send({ gas: '3000000', from: accounts[0] });
+      .send({ gas: '1000000', from: accounts[0] });
   
     console.log('Contract deployed to', result.options.address);
 };
