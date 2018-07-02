@@ -5,6 +5,7 @@ import Layout from '../../../components/Layout';
 import Campaign from '../../../etherium/campaign';
 import web3 from '../../../etherium/web3';
 import RequestRow from '../../../components/RequestRow';
+import { Router } from '../../../routes';
 
 class RequestIndex extends Component {
 
@@ -86,6 +87,7 @@ class RequestIndex extends Component {
                                             await campaign.methods.approveRequest(index).send({
                                                 from: accounts[0]
                                             });
+                                            Router.pushRoute('/');
                                         } catch(err) {
                                             console.log(err);
                                         }
