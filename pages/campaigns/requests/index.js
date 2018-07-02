@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button, Table } from 'semantic-ui-react';
 import { Link } from '../../../routes';
 import Layout from '../../../components/Layout';
+import Campaign from '../../../etherium/campaign';
 
 class RequestIndex extends Component {
 
     static async getInitialProps(props) {
         const { address } = props.query;
-
-        return { address };
-    }   
+        const campaign = Campaign(address);
+        const requestCount = await campaign.methods.getRequestsCount().call();
+    
+        // const requests = await Promise.all(
+        //   Array(requestCount)
+        //     .fill()
+        //     .map((element, index) => {
+        //       return campaign.methods.requests(index).call();
+        //     })
+        // );
+    
+        return { address, requestCount };
+    }  
     render() {
         return (
             <Layout>
